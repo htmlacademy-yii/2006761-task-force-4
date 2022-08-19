@@ -1,6 +1,8 @@
 <?php
 
-require_once 'classes/Task.php';
+use TaskForce\BusinessLogic\Task;
+
+require_once 'vendor/autoload.php';
 
 const CLIENT_ID = 1;
 const EXECUTOR_ID = 2;

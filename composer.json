@@ -1,0 +1,17 @@
+{
+    "name": "oneg1g/sasha",
+    "description": "онлайн площадка для поиска исполнителей на разовые задачи",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "oneg1g"
+        }
+    ],
+    "require": {},
+    "autoload": {
+      "psr-4": {
+        "TaskForce\\": "src/"
+      }
+    }
+}
