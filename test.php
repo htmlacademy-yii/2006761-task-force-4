@@ -10,7 +10,7 @@ const EXECUTOR_ID = 2;
 assert_options(ASSERT_ACTIVE, 1);
 assert_options(ASSERT_WARNING, 0);
 
-function myAssertHandler(string $file, int $line, mixed $code, string|null $desc = null): void
+function myAssertHandler(string $file, int $line, mixed $code, ?string $desc = null): void
 {
     echo "Неудачная проверка утверждения в $file:$line: $code";
     if ($desc) {
