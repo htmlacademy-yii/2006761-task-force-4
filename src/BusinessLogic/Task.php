@@ -1,5 +1,7 @@
 <?php
 
+namespace TaskForce\BusinessLogic;
+
 class Task
 {
     public const STATUS_NEW = 'new';

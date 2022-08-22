@@ -1,6 +1,8 @@
 <?php
 
-require_once 'classes/Task.php';
+use TaskForce\BusinessLogic\Task;
+
+require_once 'vendor/autoload.php';
 
 const CLIENT_ID = 1;
 const EXECUTOR_ID = 2;
@@ -8,7 +10,7 @@ const EXECUTOR_ID = 2;
 assert_options(ASSERT_ACTIVE, 1);
 assert_options(ASSERT_WARNING, 0);
 
-function myAssertHandler($file, $line, $code, $desc = null)
+function myAssertHandler(string $file, int $line, mixed $code, string|null $desc = null): void
 {
     echo "Неудачная проверка утверждения в $file:$line: $code";
     if ($desc) {
