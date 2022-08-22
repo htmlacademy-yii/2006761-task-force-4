@@ -16,6 +16,14 @@ class Task
     public const ACTION_COMPLETE = 'complete';
     public const ACTION_REFUSE = 'refuse';
 
+    public const ACTION_TO_STATUS_MAP = [
+        self::ACTION_START => self::STATUS_AT_WORK,
+        self::ACTION_CANCEL => self::STATUS_CANCELLED,
+        self::ACTION_RESPOND => self::STATUS_NEW,
+        self::ACTION_COMPLETE => self::STATUS_COMPLETED,
+        self::ACTION_REFUSE => self::STATUS_FAILED
+    ];
+
     private int $clientId;
     private int $executorId;
     private string $status;
@@ -48,14 +56,6 @@ class Task
         ];
     }
 
-    public const ACTION_TO_STATUS_MAP = [
-        self::ACTION_START => self::STATUS_AT_WORK,
-        self::ACTION_CANCEL => self::STATUS_CANCELLED,
-        self::ACTION_RESPOND => self::STATUS_NEW,
-        self::ACTION_COMPLETE => self::STATUS_COMPLETED,
-        self::ACTION_REFUSE => self::STATUS_FAILED
-    ];
-
     //Возвращает имя статуса, в который перейдёт задание после выполнения конкретного действия
     public function getNextStatus(string $action): string
     {
@@ -66,7 +66,7 @@ class Task
     }
 
     //Определяет список доступных действий пользователя, у которого уже есть статус
-    public function getAvailableAction(int $currentUserId)
+    public function getAvailableAction(int $currentUserId): array
     {
         if ($currentUserId === $this->clientId) {
             if ($this->status === self::STATUS_NEW) {
