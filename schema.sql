@@ -70,3 +70,11 @@ CREATE TABLE response
     task_id     INT         NOT NULL,
     dt_create   TIMESTAMP   DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE file
+(
+    id          INT         AUTO_INCREMENT PRIMARY KEY,
+    title       CHAR(255)   NOT NULL,
+    url         CHAR(255)   NOT NULL,
+    task_id     INT         NOT NULL
+);
