@@ -35,8 +35,7 @@ CREATE TABLE user
 CREATE TABLE category
 (
     id          INT         AUTO_INCREMENT PRIMARY KEY,
-    title       CHAR(64)    NOT NULL,
-    user_id     INT         NOT NULL
+    title       CHAR(64)    NOT NULL
 );
 
 CREATE TABLE category_user
